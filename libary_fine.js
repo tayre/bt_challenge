@@ -15,12 +15,15 @@ function processData(input) {
 	if (actual.year > expected.year) {
 		return 10000;
 	}
+
 	else if (actual.year === expected.year && actual.month > expected.month) {
 		return 500 * (actual.month - expected.month);
 	}
+
 	else if (actual.year === expected.year && actual.month === expected.month && actual.day > expected.day) {
 		return 15 * (actual.day - expected.day);
 	}
+
 	else {
 		return 0;
 	}
