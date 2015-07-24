@@ -10,8 +10,8 @@ stdin.setEncoding('utf8');
 process.stdin.resume();
 
 // listen for data events, which allows us to get the data out of the stream as soon as possible
-stdin.on('data', function(chunk){
-	if (chunk !== null) { 
+stdin.on('data', function(chunk) {
+	if (chunk !== null) {
 		buffer += chunk;
 	}
 });
@@ -25,7 +25,7 @@ stdin.on('end', function() {
 
 // write the elements of input to standard out
 function printResult(input) {
-	for(var i = 0; i<input.length; i++) {
+	for (var i = 0; i < input.length; i++) {
 		stdout.write(input[i] + "\n");
 	}
 }
@@ -36,11 +36,11 @@ function sumArray(input) {
 	var result = [];
 	var sum = 0;
 
-	for(var i = 1; i < input.length; i++) {
+	for (var i = 1; i < input.length; i++) {
 		operands = (input[i].split(' '));
 		sum = parseInt(operands[0]) + parseInt(operands[1]);
 		result.push(sum);
 	}
-	
+
 	return result;
 }
