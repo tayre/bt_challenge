@@ -1,13 +1,13 @@
 function processData(input) {
 	var buffer = input.split('\n');
-	var n = buffer[0];
+	var n = parseInt(buffer[0]);
 	var items = buffer[1].split(' ');
     return items;
 }
 
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
-_input = "";
+var _input = "";
 process.stdin.on("data", function(input) {
 	_input += input;
 });
