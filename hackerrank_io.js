@@ -1,8 +1,8 @@
 function processData(input) {
 	var buffer = input.split('\n');
-	var n = parseInt(buffer[0]);
+	var n = parseInt(buffer[0].trim());
 	var items = buffer[1].split(' ');
-    return items;
+	return items;
 }
 
 process.stdin.resume();
