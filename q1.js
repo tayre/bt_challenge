@@ -1,18 +1,11 @@
-function processData(input) {
-	var buffer = input.split('\n');
-	var n = parseInt(buffer[0].trim());
-	var items = buffer[1].split(' ');
-	return items;
-}
-
-// start reading from standard in
+// start reading from standard input
 process.stdin.resume();
 
-// convert bytes to ascii characters - typically I would UTF-8 encode, but this was the hackerrank setup
-process.stdin.setEncoding("ascii");
+// convert bytes to UTF-8 characters.
+process.stdin.setEncoding("utf8");
 
+// Listen for data events, which allows us to get the data out of the stream as soon as possible
 var _input = "";
-// listen for data events, which allows us to get the data out of the stream as soon as possible
 process.stdin.on("data", function(input) {
 	_input += input;
 });
@@ -21,3 +14,11 @@ process.stdin.on("data", function(input) {
 process.stdin.on("end", function() {
 	console.log(processData(_input));
 });
+
+// the main function: write to standard out the solution to the problem question, in the requested format
+function processData(input) {
+	var buffer = input.split('\n');
+	var n = parseInt(buffer[0].trim());
+	var items = buffer[1].split(' ');
+	return items;
+}
