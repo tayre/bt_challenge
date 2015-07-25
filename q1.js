@@ -1,7 +1,11 @@
+/*	This implements a solution for the Broadway Technology Developer Test 
+ *	Submitted by ayre.tom@gmail.com on 25 July 2015
+ */
+
 // start reading from standard input
 process.stdin.resume();
 
-// convert bytes to UTF-8 characters.
+// set encoding on input stream
 process.stdin.setEncoding("utf8");
 
 // Listen for data events, which allows us to get the data out of the stream as soon as possible
