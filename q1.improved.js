@@ -10,19 +10,17 @@
 function sumBalance(arr) {
 
 	var leftsum = 0;
-	var rightsum = 0;
+	var rightsum = sumElements(arr); //initialize right sum to the be the sum of all array elements.
+
 	for (var i = 0; i < arr.length; i++) {
 
-		// calculate left sum
-		leftsum = sumElements(arr.slice(0, i));
-
-		// calculate right sum
-		rightsum = sumElements(arr.slice(i + 1, arr.length));
+		rightsum = rightsum - arr[i];
 
 		if (leftsum === rightsum) {
 			return 1;
 		}
 
+		leftsum += arr[i];
 	}
 
 	// input array does not have such an element
